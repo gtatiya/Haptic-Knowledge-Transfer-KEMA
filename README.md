@@ -32,9 +32,8 @@ Sawyer: https://github.com/medegw01/sawyer_tufts
 ### Speeding up object recognition
 
 Baseline condition: `python MulitBehaviorsObjectClassification.py` <br>
-Transfer condition: `MulitBehaviorsOC_KEMA.py`
+Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 ### Novel object recognition
 
 `python MulitBehaviorsNovelOC_KEMA.py`
-
