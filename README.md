@@ -1,5 +1,7 @@
 # Haptic Knowledge Transfer Between Heterogeneous Robots using Kernel Manifold Alignment
 
+<img src="figs/framework.jpg" alt="drawing" width="600px"/>
+
 ## Development Environment
 
 `Python 3.7.6` and `MATLAB R2019b update 3 (9.7.0.1261785)` are used for development and following packages are required to run the code:<br><br>
@@ -29,7 +31,7 @@ Sawyer: https://github.com/medegw01/sawyer_tufts
 
 ### Speeding up object recognition
 
-Baseline condition: `python MulitBehaviorsObjectClassification.py`
+Baseline condition: `python MulitBehaviorsObjectClassification.py` <br>
 Transfer condition: `MulitBehaviorsOC_KEMA.py`
 
 ### Novel object recognition
