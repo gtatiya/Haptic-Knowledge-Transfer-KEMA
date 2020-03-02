@@ -49,25 +49,32 @@ ALL_ROBOTS_LIST = ["baxter", "fetch", "sawyer"]
 A_TARGET_ROBOT = "fetch" #always 1 robot
 #A_TARGET_ROBOT = "sawyer" #always 1 robot
 
-A_TARGET_ROBOT_DATATYPE = "discretizedmean-10"
+# A_TARGET_ROBOT_DATATYPE = "discretizedmean-10"
+A_TARGET_ROBOT_DATATYPE = "discretizedrange-15"
 
 SOURCE_ROBOT_LIST = [] #always 2 robots
 for a_robot in ALL_ROBOTS_LIST:
     if a_robot != A_TARGET_ROBOT:
         SOURCE_ROBOT_LIST.append(a_robot)
-SOURCE_ROBOT_DATATYPE = ["discretizedmean-10", "discretizedmean-10"]
+# SOURCE_ROBOT_DATATYPE = ["discretizedmean-10", "discretizedmean-10"]
+SOURCE_ROBOT_DATATYPE = ["discretizedrange-15", "discretizedrange-15"]
 
-BEHAVIOR_LIST = ["place"]
+# BEHAVIOR_LIST = ["place"]
 #BEHAVIOR_LIST = ["grasp", "pick"]
-#BEHAVIOR_LIST = ["grasp", "pick", "place", "shake"]
+BEHAVIOR_LIST = ["grasp", "pick", "place", "shake"]
+
+RUNS = 10
+
+NUM_OF_NOVEL_OBJECTS = 2 # Min: 2, Max: NUM_OF_OBJECTS-1
+TEST_ON_NON_TRAIN = False  # True: to test on all other non-train objects
+if TEST_ON_NON_TRAIN:
+    NUM_OF_NOVEL_OBJECTS = 2
+
+print_plots = True
 
 MY_COLORS = ["orangered", "olive", "beige", "black", "chartreuse", "blue", "brown", "coral", "crimson", "cyan",
              "darkblue", "darkgreen", "fuchsia", "gold", "green", "grey", "indigo", "orange", "khaki", "orchid",
              "steelblue", "chocolate", "lightblue", "magenta", "maroon"]
-
-i = 18 #for effort
-
-RUNS = 2 #10
 
 if A_TARGET_ROBOT == "baxter":
     SOURCE_DATA_PERCENT = 10  # 1 to 100
@@ -76,17 +83,12 @@ elif A_TARGET_ROBOT == "fetch":
 elif A_TARGET_ROBOT == "sawyer":
     SOURCE_DATA_PERCENT = 10  # 1 to 100
 
+i = 18 #for effort
+# new_lables = np.arange(3, NUM_OF_OBJECTS+1, 2) # 12 lables
 new_lables = np.arange(1, NUM_OF_OBJECTS+1) # all 25 lables
 NUM_OF_OBJECTS = len(new_lables)
 
-NUM_OF_NOVEL_OBJECTS = 2 # Min: 2, Max: NUM_OF_OBJECTS-1
-TEST_ON_NON_TRAIN = False  # True: to test on all other non-train objects
-if TEST_ON_NON_TRAIN:
-    NUM_OF_NOVEL_OBJECTS = 2
-
 num_of_KEMA_features = 1
-
-print_plots = False
 
 MATLAB_eng = matlab.engine.start_matlab()
 
@@ -327,7 +329,8 @@ for no_of_target_objects in np.arange(NUM_OF_OBJECTS-NUM_OF_NOVEL_OBJECTS, 0, -1
                 xmin, xmax, ymin, ymax = ax.axis()
                 file_name = data_path_KEMA+os.sep+A_TARGET_ROBOT+"_IE/"+a_behavior+"_"+str(len(train_target_objects))+"Train_"+str(len(test_target_objects))+"Test_"+str(a_run)+"Run_"+str(round(y_prob_acc*100, 1))+"%.png"
                 plt.savefig(file_name, bbox_inches='tight', dpi=100)
-                plt.show(block=True)
+                # plt.show(block=True)
+                plt.close()
                 
 
                 fig, ax = plt.subplots(nrows=1, ncols=1, figsize=(10, 5))
@@ -357,7 +360,8 @@ for no_of_target_objects in np.arange(NUM_OF_OBJECTS-NUM_OF_NOVEL_OBJECTS, 0, -1
                 ax.set_xlim([xmin, xmax])
                 file_name = data_path_KEMA+os.sep+A_TARGET_ROBOT+"_IE/"+a_behavior+"_"+str(len(train_target_objects))+"Train_"+str(len(test_target_objects))+"Test_"+str(a_run)+"Run_"+str(round(y_prob_acc*100, 1))+"%_prediction.png"
                 plt.savefig(file_name, bbox_inches='tight', dpi=100)
-                plt.show(block=True)
+                # plt.show(block=True)
+                plt.close()
             #################################################################
 
 
@@ -441,3 +445,4 @@ plt.xlabel("No. of objects explored by target robot", fontsize=14)
 file_name = data_path_KEMA+os.sep+A_TARGET_ROBOT+"_accuracy_novel"
 plt.savefig(file_name, bbox_inches='tight', dpi=100)
 #plt.show()
+plt.close()

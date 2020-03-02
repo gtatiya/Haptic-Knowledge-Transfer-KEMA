@@ -38,13 +38,14 @@ CLF = SVC(gamma='auto', kernel='rbf', probability=True)
 CLF_NAME = "SVM-RBF"
 
 robot_list = ["baxter", "fetch", "sawyer"]
-robot_datatype = ["discretizedmean-10", "discretizedmean-10", "discretizedmean-10"]
+# robot_datatype = ["discretizedmean-10", "discretizedmean-10", "discretizedmean-10"]
+robot_datatype = ["discretizedrange-15", "discretizedrange-15", "discretizedrange-15"]
 
-behavior_list = ["pick", "place"]
-# behavior_list = ["grasp", "pick", "place", "shake"]
+#behavior_list = ["pick", "place"]
+behavior_list = ["grasp", "pick", "place", "shake"]
 
-no_of_interactions = [1, 40, 80]
-#no_of_interactions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80]
+#no_of_interactions = [1, 40, 80]
+no_of_interactions = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80]
 #no_of_interactions = range(1, len(train_test_splits["fold_0"]["train"]))
 
 train_test_splits = split_train_test(FOLDS, TRIALS_PER_OBJECT)
@@ -173,11 +174,12 @@ for r_i, a_robot in enumerate(robot_list):
     plt.ylabel('Accuracy ('+str(NUM_OF_OBJECTS)+' Objects)')
     plt.title(a_robot.capitalize()+': Accuracy Curve using '+robot_datatype[r_i]+' features')
     plt.legend()
-    plt.savefig(results_path+os.sep+a_robot+"_"+CLF_NAME+".png", bbox_inches='tight', dpi=100)
+    plt.savefig(results_path+os.sep+a_robot+"_"+CLF_NAME+"_"+robot_datatype[r_i]+".png", bbox_inches='tight', dpi=100)
     #plt.show()
+    plt.close()
     
     # Save results
-    db_file_name = results_path+os.sep+a_robot+"_"+CLF_NAME+".bin"
+    db_file_name = results_path+os.sep+a_robot+"_"+CLF_NAME+"_"+robot_datatype[r_i]+".bin"
     output_file = open(db_file_name, "wb")
     pickle.dump(a_robot, output_file)
     pickle.dump(robot_datatype[r_i], output_file)

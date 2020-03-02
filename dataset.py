@@ -139,12 +139,11 @@ def discretize_datasets(examples, temporal_bins = 10, features = 27):
 			    dis_features = []
 			    for a_feature in range(features):
 			    	if i == 0:
-			    		value = np.mean(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
-			    	# elif i == 1:
-			    	# 	value = np.std(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
-			    	# elif i == 2:
-			    	# 	value = np.max(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
-			    	#print("value: ", value)
+			    		# value = np.mean(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
+
+			    		value1 = np.max(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
+			    		value2 = np.min(a_example[size*a_bin:size*(a_bin+1)][:, a_feature], axis=0)
+			    		value = value1 - value2
 			    	if str(value) == "nan":
 			    		print("value: ", value)
 			    		print(a_example[size*a_bin:size*(a_bin+1)][:, a_feature])
@@ -186,7 +185,8 @@ def save_datasets_for_a_robot(robot_name, robot_data, path, temporal_bins = 10, 
 	    # save_datasets(examples, labels, db_file_name, path)
 
 	    discretized_examples = discretize_datasets(examples, temporal_bins, features)
-	    db_file_name = robot_name+"_"+interaction+"_"+"discretizedmean-10.bin"
+	    #db_file_name = robot_name+"_"+interaction+"_"+"discretizedmean-10.bin"
+	    db_file_name = robot_name+"_"+interaction+"_"+"discretizedrange-15.bin"
 	    save_datasets(discretized_examples, labels, db_file_name, path)
 
 	    # examples = []
@@ -213,7 +213,7 @@ if __name__ == "__main__":
 
 	baxter, sawyer, fetch = read_csv_of_each_interaction(path)
 
-	TEMPORAL_BINS = 10
+	TEMPORAL_BINS = 15
 	CHANNELS = 1
 
 	save_datasets_for_a_robot("baxter", baxter, path, TEMPORAL_BINS, FEATURES)

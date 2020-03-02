@@ -51,30 +51,32 @@ ALL_ROBOTS_LIST = ["baxter", "sawyer", "fetch"]
 A_TARGET_ROBOT = "fetch" #always 1 robot
 #A_TARGET_ROBOT = "sawyer" #always 1 robot
 
-A_TARGET_ROBOT_DATATYPE = "discretizedmean-10"
+#A_TARGET_ROBOT_DATATYPE = "discretizedmean-10"
+A_TARGET_ROBOT_DATATYPE = "discretizedrange-15"
 
 SOURCE_ROBOT_LIST = [] #always 2 robots
 for a_robot in ALL_ROBOTS_LIST:
     if a_robot != A_TARGET_ROBOT:
         SOURCE_ROBOT_LIST.append(a_robot)
-SOURCE_ROBOT_DATATYPE = ["discretizedmean-10", "discretizedmean-10"]
+#SOURCE_ROBOT_DATATYPE = ["discretizedmean-10", "discretizedmean-10"]
+SOURCE_ROBOT_DATATYPE = ["discretizedrange-15", "discretizedrange-15"]
 
-BEHAVIOR_LIST = ["pick", "place"]
-#BEHAVIOR_LIST = ["grasp", "pick", "place", "shake"]
+# BEHAVIOR_LIST = ["pick", "place"]
+BEHAVIOR_LIST = ["grasp", "pick", "place", "shake"]
+
+# NO_OF_INTERACTIONS = [1, 40, 80]
+NO_OF_INTERACTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80]
+#NO_OF_INTERACTIONS = range(1, len(TRAIN_TEST_SPLITS["fold_0"]["train"]))
 
 TRAIN_TEST_SPLITS = split_train_test(FOLDS, TRIALS_PER_OBJECT)
 i = 18  # for effort
-NO_OF_INTERACTIONS = [1, 40, 80]
-#NO_OF_INTERACTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 20, 30, 40, 50, 60, 70, 80]
-#NO_OF_INTERACTIONS = range(1, len(TRAIN_TEST_SPLITS["fold_0"]["train"]))
+new_lables = np.arange(1, NUM_OF_OBJECTS+1) # all 25 lables
+NUM_OF_OBJECTS = len(new_lables)
 
 KEMA_PARAMETERS_ROBOTS = {'baxter':{'source_per':[10, 5, 5], 'kema_fea':[1, 1, 1]},
                           'fetch':{'source_per':[30, 5, 5], 'kema_fea':[1, 1, 1]},
                           'sawyer':{'source_per':[10, 5, 5], 'kema_fea':[1, 2, 2]}
                          }
-
-new_lables = np.arange(1, NUM_OF_OBJECTS+1) # all 25 lables
-NUM_OF_OBJECTS = len(new_lables)
 
 MATLAB_eng = matlab.engine.start_matlab()
 
@@ -322,6 +324,7 @@ plt.title(A_TARGET_ROBOT.capitalize()+': Accuracy Curve using latent features (K
 plt.legend()
 plt.savefig(data_path_KEMA+os.sep+A_TARGET_ROBOT+"_"+CLF_NAME+"_KEMA.png", bbox_inches='tight', dpi=100)
 #plt.show()
+plt.close()
 
 # Save results
 db_file_name = data_path_KEMA+os.sep+A_TARGET_ROBOT+"_"+CLF_NAME+"_KEMA.bin"
@@ -337,4 +340,3 @@ file = open(data_path_KEMA+os.sep+A_TARGET_ROBOT+"_"+CLF_NAME+'_KEMA_time_log.tx
 end_time = time.time()
 file.write("\nTotal Time: " + time_taken(main_start_time, end_time))
 file.close()
-
