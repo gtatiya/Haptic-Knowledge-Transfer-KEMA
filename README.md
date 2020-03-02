@@ -25,6 +25,14 @@
 
 - [Visualization of each modalities](DatasetVisualization.ipynb)
 
+### Discretized Mean 10 bins
+
+<img src="figs/Effort_Data_discretizedmean-10.jpg" alt="drawing" width="900px"/>
+
+### Discretized Range 15 bins
+
+<img src="figs/Effort_Data_discretizedrange-15.jpg" alt="drawing" width="900px"/>
+
 ### Dataset Collection
 
 Baxter: https://github.com/medegw01/baxter_tufts <br>
