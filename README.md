@@ -62,3 +62,16 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 <img src="Results/SpeedingUp_Sawyer.jpg" alt="drawing" width="900px"/>
 
+### Novel object recognition results
+
+#### Baster as Target Robot
+
+<img src="Results/NovelObj_Baxter.jpg" alt="drawing" width="900px"/>
+
+#### Fetch as Target Robot
+
+<img src="Results/NovelObj_Fetch.jpg" alt="drawing" width="900px"/>
+
+#### Sawyer as Target Robot
+
+<img src="Results/NovelObj_Sawyer.jpg" alt="drawing" width="900px"/>
