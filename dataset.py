@@ -209,7 +209,6 @@ if __name__ == "__main__":
 	#bag_2_csv(rosbagfiles_path, csv_file_path, "Fetch") # for fetch
 
 	path = r".."+os.sep+"Sim_KnoTraBots_datasets_v3_csvfiles"
-	#path = "/media/samuel/Samsung USB/dat/Sim_KnoTraBots_datasets_v3_csvfiles"
 
 	baxter, sawyer, fetch = read_csv_of_each_interaction(path)
 
