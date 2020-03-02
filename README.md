@@ -46,5 +46,5 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 ### Illustrative Example
 
-<img src="Results/IllustrativeExample.jpg" alt="drawing" width="600px"/>
+<img src="Results/IllustrativeExample.jpg" alt="drawing" width="900px"/>
 
