@@ -52,13 +52,13 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 #### Baster as Target Robor
 
-<img src="Results/SpeedingUp_Baxter.jpg" alt="drawing" width="600px"/>
+<img src="Results/SpeedingUp_Baxter.jpg" alt="drawing" width="900px"/>
 
 #### Fetch as Target Robor
 
-<img src="Results/SpeedingUp_Fetch.jpg" alt="drawing" width="600px"/>
+<img src="Results/SpeedingUp_Fetch.jpg" alt="drawing" width="900px"/>
 
 #### Sawyer as Target Robor
 
-<img src="Results/SpeedingUp_Sawyer.jpg" alt="drawing" width="600px"/>
+<img src="Results/SpeedingUp_Sawyer.jpg" alt="drawing" width="900px"/>
 
