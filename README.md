@@ -50,15 +50,15 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 ### Speeding up object recognition results
 
-#### Baster as Target Robor
+#### Baster as Target Robot
 
 <img src="Results/SpeedingUp_Baxter.jpg" alt="drawing" width="900px"/>
 
-#### Fetch as Target Robor
+#### Fetch as Target Robot
 
 <img src="Results/SpeedingUp_Fetch.jpg" alt="drawing" width="900px"/>
 
-#### Sawyer as Target Robor
+#### Sawyer as Target Robot
 
 <img src="Results/SpeedingUp_Sawyer.jpg" alt="drawing" width="900px"/>
 
