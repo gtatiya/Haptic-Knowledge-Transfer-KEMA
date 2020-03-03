@@ -50,7 +50,7 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 `python MulitBehaviorsNovelOC_KEMA.py`
 
-## Results
+## Results (Discretized Mean 10 bins)
 
 ### Illustrative Example
 
