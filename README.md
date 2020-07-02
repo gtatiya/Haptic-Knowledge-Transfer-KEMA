@@ -37,7 +37,28 @@
 
 Baxter: https://github.com/medegw01/baxter_tufts <br>
 Fetch: https://github.com/gtatiya/Fetch_Pick_and_Place <br>
-Sawyer: https://github.com/medegw01/sawyer_tufts
+Sawyer: https://github.com/medegw01/sawyer_tufts <br>
+
+<table>
+
+<tr>
+<td>
+	<a href="https://github.com/medegw01/baxter_tufts">Baxter</a>
+	<img src="figs/Baxter_pick_and_place_shake.gif" alt="drawing" width="800" height="250"/>
+</td>
+
+<td>
+	<a href="https://github.com/gtatiya/Fetch_Pick_and_Place">Fetch</a>
+	<img src="figs/Fetch_grasp_pick_hold_shake_place.gif" alt="drawing" width="800" height="250"/>
+</td>
+
+<td>
+	<a href="https://github.com/medegw01/sawyer_tufts">Sawyer</a>
+	<img src="figs/Sawyer_pick_and_place_shake.gif" alt="drawing" width="800" height="250"/>
+</td>
+</tr>
+
+</table>
 
 ## How to run the code?
 
