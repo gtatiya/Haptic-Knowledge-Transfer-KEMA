@@ -27,11 +27,11 @@
 
 ### Discretized Mean 10 bins
 
-<img src="figs/Effort_Data_discretizedmean-10.jpg" alt="drawing" width="900px"/>
+<img src="figs/Effort_Data_discretizedmean-10_GnBu.jpg" alt="drawing" width="900px"/>
 
 ### Discretized Range 15 bins
 
-<img src="figs/Effort_Data_discretizedrange-15.jpg" alt="drawing" width="900px"/>
+<img src="figs/Effort_Data_discretizedrange-15_GnBu.jpg" alt="drawing" width="900px"/>
 
 ### Dataset Collection
 
