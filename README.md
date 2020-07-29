@@ -79,7 +79,7 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 ### Speeding up object recognition results
 
-#### Baster as Target Robot
+#### Baxter as Target Robot
 
 <img src="Results/SpeedingUp_Baxter.jpg" alt="drawing" width="900px"/>
 
@@ -93,7 +93,7 @@ Transfer condition: `python MulitBehaviorsOC_KEMA.py`
 
 ### Novel object recognition results
 
-#### Baster as Target Robot
+#### Baxter as Target Robot
 
 <img src="Results/NovelObj_Baxter.jpg" alt="drawing" width="900px"/>
 
